@@ -1,0 +1,41 @@
+.navbar{
+    border-radius: 5px;
+    background-color: black;
+    color: lightblue;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li{
+    float: left;
+}
+
+li a{
+    display: block;
+    text-align: center;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a:hover{
+    color: lightblue;
+    transition-delay: 0.3s;
+}
+
+.invalidLogin{
+    color: red;
+}
+
+.search{
+    float: right;
+    padding-top: 5px;
+    padding-right: 7px;
+    border-radius: 5px;
+    padding-bottom: 3px;
+}
