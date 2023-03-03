@@ -9,4 +9,7 @@ When the user is logged in, they are greeted with a welcome alongside their full
 
 The user can also search existing users or people they know. The search feature can't access other people's profile yet, but will be added in the future.  
 
-Note: This project is focused on getting the functionality done first so you will see minimal styling or CSS.
+Note: This project is focused on getting the functionality done first so you will see minimal styling or CSS.  
+
+# Update no.1  
+The users are now stored in a database rather than in a JSON file.  
