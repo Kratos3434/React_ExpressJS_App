@@ -7,17 +7,20 @@ const Login = (props)=>{
     const [password,setPassword] = useState('');
     const [err,setErr] = useState(false);
     const navigate = useNavigate();
-    const handleLogin = (e)=>{
+    function handleLogin(e){
         e.preventDefault();
         users.map((e)=>{
-            if(e.username === username && e.password === password)
+            if(e.username === username && e.password === password){
                 fetch('/user',{
                     method: "POST",
                     headers: {'Content-type':'application/json'},
                     body: JSON.stringify({
                         "user":e
                     })
+                }).then(res=>res.json()).then(data=>{
+                    props.setUser(data);
                 }).then(navigate('/'));
+            }
         })
         setErr(true);
     }
