@@ -10,28 +10,28 @@ const Register = (props)=>{
     const [err,setErr] = useState(false);
     const handleSignup = (e)=>{
         e.preventDefault();
-        users.map(e=>{
-            if(e.username === username)
+        for(let i =0;i<users.length;i++){
+            if(users[i].username === username){
                 setErr(true);
-        })
-        if(err){
-            fetch('/api',{
-                method: 'POST',
-                headers: {'Content-type':'application/json'},
-                body: JSON.stringify(
-                    {
-                        "fName": fname,
-                        "lName": lname,
-                        "username": username,
-                        "password": password
-                    }
-                )
-            }).then(res=>res.json()).then(data=>{
-                props.setUsers(data);
-                props.fetchD();
-                navigate('/')
-            })
+                return false;
+            }
         }
+        fetch('/api',{
+            method: 'POST',
+            headers: {'Content-type':'application/json'},
+            body: JSON.stringify(
+                {
+                    "fName": fname,
+                    "lName": lname,
+                    "username": username,
+                    "password": password
+                }
+            )
+        }).then(res=>res.json()).then(data=>{
+            props.setUsers(data);
+            props.fetchD();
+            navigate('/')
+        })
     }
     return(
         <div className="register">
